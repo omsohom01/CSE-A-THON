@@ -79,7 +79,7 @@ export default function Footer() {
               <li>📅 March 29 - April 1</li>
               <li>📍 Online</li>
               <li>💥 No registration fee</li>
-              <li>🚫 No AI tools allowed</li>
+              <li>🤖 AI tools are fully allowed</li>
             </ul>
           </div>
         </div>
