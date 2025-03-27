@@ -37,7 +37,7 @@ export default function Navbar() {
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
               <a href="#" className="flex items-center">
                 <FloatingTitle
-                  text="CSE-A-THON"
+                  text="CSE-THON"
                   className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500"
                 />
               </a>

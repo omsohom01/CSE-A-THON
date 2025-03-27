@@ -27,7 +27,7 @@ export default function Footer() {
                 ease: "easeInOut",
               }}
             >
-              CSE-A-THON
+              CSE-THON
             </motion.h3>
             <p className="text-gray-400 mb-4">
               An electrifying tech fest to sharpen skills, spark creativity, and have an absolute blast!

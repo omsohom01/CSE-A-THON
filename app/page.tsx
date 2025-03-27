@@ -263,9 +263,7 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold mb-2">IMPORTANT NOTICE</h3>
                 <p className="text-gray-300">
-                  To keep it fair and enjoyable for everyone, we request NO use of AI tools for most events (except
-                  Hackathon)! This is all about your own skills, creativity, and learning – so let's make it a real
-                  challenge!
+                For the Hackathon, we encourage the FULL use of AI tools! Utilize AI to enhance your creativity, optimize your solutions, and push the boundaries of innovation. Let AI be your co-pilot in building something amazing! 🚀
                 </p>
               </div>
             </div>
