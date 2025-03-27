@@ -83,7 +83,7 @@ export default function Navbar() {
             <div className="flex flex-col h-full">
               <div className="flex justify-between items-center p-4">
                 <FloatingTitle
-                  text="CSE-A-THON"
+                  text="CSE-THON"
                   className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500"
                 />
                 <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} className="text-white">

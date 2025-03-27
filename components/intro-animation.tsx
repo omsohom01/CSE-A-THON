@@ -145,7 +145,7 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
                   ease: "easeInOut",
                 }}
               >
-                CSE-A-THON
+                CSE-THON
               </motion.div>
 
               <motion.div
