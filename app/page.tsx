@@ -34,6 +34,7 @@ export default function Home() {
       icon: "💻",
       color: "bg-gradient-to-r from-blue-700 to-indigo-500",
       aiAllowed: false,
+      formLink: "https://forms.gle/YOUR_CODATHON_FORM_ID"
     },
     {
       title: "Hackathon",
@@ -41,6 +42,7 @@ export default function Home() {
       icon: "🚀",
       color: "bg-gradient-to-r from-cyan-600 to-blue-500",
       aiAllowed: true,
+      formLink: "https://forms.gle/YOUR_HACKATHON_FORM_ID"
     },
     {
       title: "C Quiz",
@@ -48,6 +50,7 @@ export default function Home() {
       icon: "🎯",
       color: "bg-gradient-to-r from-indigo-600 to-blue-400",
       aiAllowed: false,
+      formLink: "https://forms.gle/YOUR_C_QUIZ_FORM_ID"
     },
     {
       title: "Python Quiz",
@@ -55,6 +58,7 @@ export default function Home() {
       icon: "🐍",
       color: "bg-gradient-to-r from-blue-600 to-teal-500",
       aiAllowed: false,
+      formLink: "https://forms.gle/YOUR_PYTHON_QUIZ_FORM_ID"
     },
     {
       title: "Tech Quiz",
@@ -62,6 +66,7 @@ export default function Home() {
       icon: "🎓",
       color: "bg-gradient-to-r from-sky-600 to-blue-500",
       aiAllowed: false,
+      formLink: "https://forms.gle/YOUR_TECH_QUIZ_FORM_ID"
     },
     {
       title: "Circuit Building",
@@ -69,6 +74,7 @@ export default function Home() {
       icon: "⚡",
       color: "bg-gradient-to-r from-blue-800 to-indigo-600",
       aiAllowed: false,
+      formLink: "https://forms.gle/YOUR_CIRCUIT_FORM_ID"
     },
   ]
 
@@ -253,7 +259,7 @@ export default function Home() {
                   <CardFooter>
                     <Button
                       className={`w-full ${event.color} hover:opacity-90 text-white relative overflow-hidden group`}
-                      onClick={() => window.open("https://your-gform-link-here.com", "_blank")}
+                      onClick={() => window.open(event.formLink, "_blank")}
                     >
                       <span className="relative z-10">Register for {event.title}</span>
                       <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
