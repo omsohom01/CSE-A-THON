@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "CSE-A-THON - Tech Fest",
+  title: "CSE-THON - Tech Fest",
   description: "An electrifying tech fest with coding challenges, hackathons, quizzes and more!",
     generator: 'v0.dev'
 }
