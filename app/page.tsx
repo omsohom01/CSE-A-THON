@@ -11,7 +11,7 @@ import Footer from "@/components/footer"
 import AnimatedBackground from "@/components/animated-background"
 import BinaryBackground from "@/components/binary-background"
 import FloatingTitle from "@/components/floating-title"
-import AdvancedIntro from "@/components/advanced-intro"
+import IntroAnimation from "@/components/intro-animation"
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -73,7 +73,7 @@ export default function Home() {
   ]
 
   if (showIntro) {
-    return <AdvancedIntro onComplete={() => setShowIntro(false)} />
+    return <IntroAnimation onComplete={() => setShowIntro(false)} />
   }
 
   return (
