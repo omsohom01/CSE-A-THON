@@ -42,7 +42,7 @@ export default function Home() {
       icon: "🚀",
       color: "bg-gradient-to-r from-cyan-600 to-blue-500",
       aiAllowed: true,
-      formLink: "https://forms.gle/YOUR_HACKATHON_FORM_ID"
+      formLink: "https://docs.google.com/forms/d/1ryG0M3SVVgn4YaPGPNUkbyGV_RElXz0P_JcIjghDptE"
     },
     {
       title: "C Quiz",
