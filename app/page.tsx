@@ -28,14 +28,7 @@ export default function Home() {
   }, [])
 
   const events = [
-    {
-      title: "Codathon",
-      description: "Battle it out with mind-bending coding challenges!",
-      icon: "💻",
-      color: "bg-gradient-to-r from-blue-700 to-indigo-500",
-      aiAllowed: false,
-      formLink: "https://forms.gle/YOUR_CODATHON_FORM_ID"
-    },
+    
     {
       title: "Hackathon",
       description: "Build, innovate, and showcase your next big idea! AI tools are allowed for this event.",
@@ -43,39 +36,7 @@ export default function Home() {
       color: "bg-gradient-to-r from-cyan-600 to-blue-500",
       aiAllowed: true,
       formLink: "https://docs.google.com/forms/d/1ryG0M3SVVgn4YaPGPNUkbyGV_RElXz0P_JcIjghDptE"
-    },
-    {
-      title: "C Quiz",
-      description: "Think you know C? Let's put your knowledge to the test!",
-      icon: "🎯",
-      color: "bg-gradient-to-r from-indigo-600 to-blue-400",
-      aiAllowed: false,
-      formLink: "https://forms.gle/YOUR_C_QUIZ_FORM_ID"
-    },
-    {
-      title: "Python Quiz",
-      description: "Python lovers, this is your arena! Ready to dominate?",
-      icon: "🐍",
-      color: "bg-gradient-to-r from-blue-600 to-teal-500",
-      aiAllowed: false,
-      formLink: "https://forms.gle/YOUR_PYTHON_QUIZ_FORM_ID"
-    },
-    {
-      title: "Tech Quiz",
-      description: "From AI to hardware, let's see who the ultimate tech guru is!",
-      icon: "🎓",
-      color: "bg-gradient-to-r from-sky-600 to-blue-500",
-      aiAllowed: false,
-      formLink: "https://forms.gle/YOUR_TECH_QUIZ_FORM_ID"
-    },
-    {
-      title: "Circuit Building",
-      description: "Design and simulate your electronics wizardry!",
-      icon: "⚡",
-      color: "bg-gradient-to-r from-blue-800 to-indigo-600",
-      aiAllowed: false,
-      formLink: "https://forms.gle/YOUR_CIRCUIT_FORM_ID"
-    },
+    }
   ]
 
   if (showIntro) {
@@ -146,7 +107,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <Badge className="mb-4 px-3 py-1 text-sm bg-blue-700 hover:bg-blue-600">March 29 - April 1</Badge>
             <FloatingTitle
-              text="CSE-A-THON"
+              text="CSE-THON"
               className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-500 to-indigo-500"
             />
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
