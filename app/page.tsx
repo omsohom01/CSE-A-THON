@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { ChevronDown, Calendar, MapPin, AlertCircle } from "lucide-react"
+import { ChevronDown, Calendar, MapPin, AlertCircle, Cpu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -28,16 +28,15 @@ export default function Home() {
     }
   }, [])
 
-  const events = [
-    
-    {
-      title: "Hackathon",
-      description: "Build, innovate, and showcase your next big idea! AI tools are allowed for this event.",
-      icon: "🚀",
-      color: "bg-gradient-to-r from-cyan-600 to-blue-500",
-      aiAllowed: true,
-    }
-  ]
+  // Single event - Hackathon
+  const event = {
+    title: "Hackathon",
+    description:
+      "Build, innovate, and showcase your next big idea! Complete use of AI tools is allowed and encouraged for this event. Leverage AI to create cutting-edge solutions!",
+    icon: "🚀",
+    color: "bg-gradient-to-r from-cyan-600 to-blue-500",
+    aiAllowed: true,
+  }
 
   if (showIntro) {
     return <IntroAnimation onComplete={() => setShowIntro(false)} />
@@ -111,15 +110,15 @@ export default function Home() {
               className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-500 to-indigo-500"
             />
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
-              Get ready for an electrifying tech fest this holiday! Sharpen your skills, spark creativity, and have an
-              absolute blast!
+              Get ready for an electrifying tech hackathon! Sharpen your skills, spark creativity, and have an absolute
+              blast with AI-powered innovation!
             </p>
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 rounded-full px-8"
-              onClick={() => document.getElementById("events")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("event")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Explore Events
+              Explore Hackathon
             </Button>
           </motion.div>
 
@@ -134,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* Event Details */}
-      <section id="events" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+      <section id="event" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
         {/* Add a subtle tech pattern background */}
         <div className="absolute inset-0 opacity-5 z-0 overflow-hidden">
           <div
@@ -153,82 +152,118 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Thrilling Events</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Hackathon Challenge</h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Participate in our exciting lineup of tech challenges and competitions!
+              Unleash your creativity and technical skills in our AI-powered hackathon!
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events.map((event, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{
-                  y: -10,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                  transition: { duration: 0.2 },
-                }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-gray-900/80 backdrop-blur-sm border border-gray-800 overflow-hidden h-full relative group">
-                  <div className={`h-2 ${event.color}`}></div>
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className={`absolute inset-0 ${event.color} opacity-10 blur-xl`}></div>
-                  </div>
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <motion.div
-                        className="text-4xl mb-2"
-                        animate={{
-                          scale: [1, 1.1, 1],
-                          rotate: [0, 5, 0, -5, 0],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Number.POSITIVE_INFINITY,
-                          repeatDelay: 1,
-                        }}
-                      >
-                        {event.icon}
-                      </motion.div>
-                      <Badge variant="outline" className="bg-gray-800 text-gray-300 border-gray-700">
-                        Tech Event
-                      </Badge>
-                    </div>
-                    <CardTitle className="text-2xl">{event.title}</CardTitle>
-                    <CardDescription className="text-gray-400">{event.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2 text-gray-400">
-                      <div className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        <span>March 29 - April 1</span>
-                      </div>
-                      <div className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-2" />
-                        <span>Online</span>
-                      </div>
-                      <div className="flex items-center">
-                        <AlertCircle className="w-4 h-4 mr-2" />
-                        <span>{event.aiAllowed ? "AI tools allowed" : "No AI tools allowed"}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Button
-                      className={`w-full ${event.color} hover:opacity-90 text-white relative overflow-hidden group`}
-                      onClick={() => window.open("https://your-gform-link-here.com", "_blank")}
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{
+                y: -10,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                transition: { duration: 0.2 },
+              }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gray-900/80 backdrop-blur-sm border border-gray-800 overflow-hidden relative group">
+                <div className={`h-2 ${event.color}`}></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className={`absolute inset-0 ${event.color} opacity-10 blur-xl`}></div>
+                </div>
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <motion.div
+                      className="text-4xl mb-2"
+                      animate={{
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 5, 0, -5, 0],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Number.POSITIVE_INFINITY,
+                        repeatDelay: 1,
+                      }}
                     >
-                      <span className="relative z-10">Register for {event.title}</span>
-                      <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
+                      {event.icon}
+                    </motion.div>
+                    <Badge variant="outline" className="bg-blue-900/30 text-blue-300 border-blue-700/50">
+                      AI-Powered Event
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-3xl">{event.title}</CardTitle>
+                  <CardDescription className="text-gray-400 text-lg">{event.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-6">
+                    <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                      <h3 className="text-xl font-semibold mb-3 flex items-center">
+                        <Cpu className="mr-2 h-5 w-5 text-blue-400" />
+                        AI Tools Highlight
+                      </h3>
+                      <p className="text-gray-300 mb-3">
+                        This hackathon encourages the use of AI tools to enhance your projects. You can use:
+                      </p>
+                      <ul className="space-y-2 text-gray-300">
+                        <li className="flex items-center">
+                          <span className="text-blue-400 mr-2">•</span>
+                          <span>Large Language Models (ChatGPT, Claude, Gemini, etc.)</span>
+                        </li>
+                        <li className="flex items-center">
+                          <span className="text-blue-400 mr-2">•</span>
+                          <span>AI-powered code generation tools (GitHub Copilot, etc.)</span>
+                        </li>
+                        <li className="flex items-center">
+                          <span className="text-blue-400 mr-2">•</span>
+                          <span>Image generation models (DALL-E, Midjourney, Stable Diffusion)</span>
+                        </li>
+                        <li className="flex items-center">
+                          <span className="text-blue-400 mr-2">•</span>
+                          <span>Any other AI tools that can help you build your solution</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
+                        <div className="flex items-center mb-2">
+                          <Calendar className="w-4 h-4 mr-2 text-blue-400" />
+                          <span className="text-gray-300 font-medium">Date</span>
+                        </div>
+                        <p className="text-gray-400">March 29 - April 1</p>
+                      </div>
+                      <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
+                        <div className="flex items-center mb-2">
+                          <MapPin className="w-4 h-4 mr-2 text-blue-400" />
+                          <span className="text-gray-300 font-medium">Location</span>
+                        </div>
+                        <p className="text-gray-400">Online</p>
+                      </div>
+                      <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
+                        <div className="flex items-center mb-2">
+                          <AlertCircle className="w-4 h-4 mr-2 text-blue-400" />
+                          <span className="text-gray-300 font-medium">AI Policy</span>
+                        </div>
+                        <p className="text-gray-400">Complete use of AI allowed</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button
+                    className={`w-full ${event.color} hover:opacity-90 text-white relative overflow-hidden group`}
+                    onClick={() => window.open("https://your-gform-link-here.com", "_blank")}
+                  >
+                    <span className="relative z-10">Register for {event.title}</span>
+                    <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -236,7 +271,7 @@ export default function Home() {
       {/* Judge Panel Section */}
       <JudgePanel />
 
-      {/* Important Notice */}
+      {/* AI Tools Highlight */}
       <section className="py-16 bg-gray-900 relative">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzYjgyZjYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzAgMzBjMCAxNi41NjktMTMuNDMxIDMwLTMwIDMwUzAgNDYuNTY5IDAgMzAgMTMuNDMxIDAgMzAgMHMzMCAxMy40MzEgMzAgMzB6IiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6bXVsdGlwbHkiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
 
@@ -261,14 +296,14 @@ export default function Home() {
                   repeatDelay: 1,
                 }}
               >
-                ⚠️
+                🤖
               </motion.div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">IMPORTANT NOTICE</h3>
+                <h3 className="text-2xl font-bold mb-2">AI TOOLS ENCOURAGED</h3>
                 <p className="text-gray-300">
-                  To keep it fair and enjoyable for everyone, we request NO use of AI tools for most events (except
-                  Hackathon)! This is all about your own skills, creativity, and learning – so let's make it a real
-                  challenge!
+                  Unlike traditional hackathons, we're excited to see how you leverage AI tools to enhance your
+                  creativity and productivity! Use ChatGPT, GitHub Copilot, DALL-E, or any other AI tools to build
+                  something amazing. Show us how AI can amplify human creativity!
                 </p>
               </div>
             </div>
@@ -280,4 +315,3 @@ export default function Home() {
     </div>
   )
 }
-

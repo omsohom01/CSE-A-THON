@@ -40,7 +40,7 @@ export default function JudgePanel() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 to-black relative">
+    <section id="judge" className="py-20 bg-gradient-to-b from-gray-900 to-black relative">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -157,5 +157,3 @@ export default function JudgePanel() {
     </section>
   )
 }
-
-+
