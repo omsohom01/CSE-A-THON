@@ -12,6 +12,7 @@ import AnimatedBackground from "@/components/animated-background"
 import BinaryBackground from "@/components/binary-background"
 import FloatingTitle from "@/components/floating-title"
 import IntroAnimation from "@/components/intro-animation"
+import JudgePanel from "@/components/judge-panel"
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -35,7 +36,6 @@ export default function Home() {
       icon: "🚀",
       color: "bg-gradient-to-r from-cyan-600 to-blue-500",
       aiAllowed: true,
-      formLink: "https://docs.google.com/forms/d/1ryG0M3SVVgn4YaPGPNUkbyGV_RElXz0P_JcIjghDptE"
     }
   ]
 
@@ -107,7 +107,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <Badge className="mb-4 px-3 py-1 text-sm bg-blue-700 hover:bg-blue-600">March 29 - April 1</Badge>
             <FloatingTitle
-              text="CSE-THON"
+              text="CSE-A-THON"
               className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-500 to-indigo-500"
             />
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
@@ -220,7 +220,7 @@ export default function Home() {
                   <CardFooter>
                     <Button
                       className={`w-full ${event.color} hover:opacity-90 text-white relative overflow-hidden group`}
-                      onClick={() => window.open(event.formLink, "_blank")}
+                      onClick={() => window.open("https://your-gform-link-here.com", "_blank")}
                     >
                       <span className="relative z-10">Register for {event.title}</span>
                       <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
@@ -232,6 +232,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Judge Panel Section */}
+      <JudgePanel />
 
       {/* Important Notice */}
       <section className="py-16 bg-gray-900 relative">
@@ -263,7 +266,9 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold mb-2">IMPORTANT NOTICE</h3>
                 <p className="text-gray-300">
-                For the Hackathon, we encourage the FULL use of AI tools! Utilize AI to enhance your creativity, optimize your solutions, and push the boundaries of innovation. Let AI be your co-pilot in building something amazing! 🚀
+                  To keep it fair and enjoyable for everyone, we request NO use of AI tools for most events (except
+                  Hackathon)! This is all about your own skills, creativity, and learning – so let's make it a real
+                  challenge!
                 </p>
               </div>
             </div>
@@ -275,3 +280,4 @@ export default function Home() {
     </div>
   )
 }
+
